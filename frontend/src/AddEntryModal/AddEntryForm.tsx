@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/unbound-method */
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Button } from "semantic-ui-react";
 import { Field, Formik, Form, FormikProps, ArrayHelpers  } from "formik";
 // import { v4 as uuidv4 } from 'uuid';
 import { TextField, SelectEntry, SelectRating, EntryOption, HealthCheckRatingOption, DiagnosisSelection } from "./FormField";
 import { EntryType, HealthCheckRating, NewEntry } from "../types";
 import { useStateValue } from "../state";
+import FormDatePicker from "../components/FormDatePicker";
 
 
 export type EntryFormValues = NewEntry;
@@ -41,14 +42,6 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel}) => {
   const [{ diagnosisData: diagnoses }] = useStateValue();
   if (!diagnoses) throw new Error('diagnoses data does not exist');
 
-  // interface InitialValues {
-  //   type: EntryType.HealthCheck,
-  //   specialist: string,
-  //   diagnosisCodes: string[],
-  //   description: string, 
-  //   healthCheckRating: HealthCheckRating,
-    
-  // }
 
   const baseValues = {
     type: EntryType.HealthCheck,
@@ -61,15 +54,15 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel}) => {
   };
   const hospitalValues = {
     discharge: {
-      date: '',
+      date: new Date().toISOString().split('T')[0],
       criteria: ''
     },
   };
   const occupationalHealthcareValues = {
     employerName: '',
     sickLeave: {
-      startDate: '',
-      endDate: ''
+      startDate: new Date().toISOString().split('T')[0],
+      endDate: new Date().toISOString().split('T')[0]
     }
   };
   interface errorValues {
@@ -103,9 +96,6 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel}) => {
         const requiredError = "Field is required";
         const dateError = "Date format must match YYYY-MM-DD ";
         const errors: errorValues = {};
-        // const errors: { [field: string]: string } = {};
-        // const errors: { [field: string | Record<string, unknown>]: string } = {};
-        
       
         if (!values.specialist) {
           errors.specialist = requiredError;
@@ -198,7 +188,7 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel}) => {
               label="Discharge Date"
               placeholder="YYYY-MM-DD"
               name="discharge.date"
-              component={TextField}
+              component={FormDatePicker}
               />
             </>
             }
@@ -213,20 +203,17 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel}) => {
                 component={TextField}
                 />       
                 <Field
-                label="Sick Leave Start Date"
-                placeholder="YYYY-MM-DD"
-                name="sickLeave.startDate"
-                component={TextField}
-                />       
+                  label="Sick Leave Start Date"
+                  name="sickLeave.startDate"
+                  component={FormDatePicker}
+                />
                 <Field
-                label="Sick Leave End Date"
-                placeholder="YYYY-MM-DD"
-                name="sickLeave.endDate"
-                component={TextField}
-                />       
+                  label="Sick Leave End Date"
+                  name="sickLeave.endDate"
+                  component={FormDatePicker}
+                />
               </>
             }
-            
             <Grid>
               <Grid.Column floated="left" width={5}>
                 <Button type="button" onClick={onCancel} color="red">

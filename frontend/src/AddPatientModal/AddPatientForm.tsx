@@ -31,7 +31,7 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel }) => {
       initialValues={{
         name: "",
         ssn: "",
-        dateOfBirth: new Date().toDateString(),
+        dateOfBirth: new Date().toISOString().split('T')[0],
         occupation: "",
         gender: Gender.Other,
         healthRating: 3,

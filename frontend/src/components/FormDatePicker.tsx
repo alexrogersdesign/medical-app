@@ -10,6 +10,7 @@ interface FormValues {
   
   interface IForm {
     setFieldValue: (name:string, value:string) => void,
+    isValid: boolean,
   }
   
   type IDateProps = {
@@ -28,20 +29,22 @@ const FormDatePicker: React.FC<IDateProps> = ({
     ...props
 }) => {
 
-    const isValid = (date:string): boolean => {
+    const isValidDate = (date:string): boolean => {
         const convertedDate = new Date(date);
         return convertedDate instanceof Date && !isNaN(convertedDate.getTime());
     };
 
     if (field && form){
         const { name, value } = field;
-        const { setFieldValue } = form; 
+        const { setFieldValue, isValid } = form; 
         let selectedDate = new Date(value);
-        if(!isValid(value)){ selectedDate = new Date(); }
+        if(!isValidDate(value)){ selectedDate = new Date(); }
+        
     return (
         <>
-            <Form.Field>
+            <Form.Field > 
                 <label>{label}</label>
+                <div>
                 <DatePicker 
                 selected={selectedDate}
                 dateFormat="MMMM d, yyyy"
@@ -49,6 +52,7 @@ const FormDatePicker: React.FC<IDateProps> = ({
                 onChange={(date:Date) => setFieldValue(name, date.toISOString().split('T')[0])}
                 {...props}
                 />
+                </div>
             </Form.Field>
         </>
     );}
