@@ -49,7 +49,9 @@ const PatientDetailsPage: React.FC = () => {
             });
             closeModal();
         } catch (e) {
+            // tslint:disable-next-line
             console.error(e.response.data);
+            // tslint:disable-next-line
             setError(e.response.data.error);
         }
     };

@@ -1,10 +1,32 @@
 import React from 'react';
 import { Rating } from 'semantic-ui-react';
 
+interface FormValues {
+  name: string,
+  value: number,
+}
+
+interface IForm {
+  setFieldValue: (name:string, value:number) => void,
+}
+
+export interface FormikActions<Values> {
+  setFieldValue<Field extends keyof Values>(
+    field: Field,
+    value: Values[Field],
+    shouldValidate?: boolean
+  ): void;
+}
+
 type BarProps = {
   rating: number;
   showText: boolean;
+  disabled?: true;
+  field?: FormValues,
+  form?: IForm,
+  children?: unknown
 };
+
 
 const HEALTHBAR_TEXTS = [
   'The patient is in great shape',
@@ -13,13 +35,38 @@ const HEALTHBAR_TEXTS = [
   'The patient has a diagnosed condition',
 ];
 
-const HealthRatingBar: React.FC<BarProps> = ({ rating, showText }: BarProps) => {
-  return (
-    <div className="health-bar">
-      {<Rating icon="heart" disabled rating={4 - rating} maxRating={4} />}
-      {showText ? <p>{HEALTHBAR_TEXTS[rating]}</p> : null}
-    </div>
-  );
+const HealthRatingBar: React.FC<BarProps> = ({ 
+  rating, 
+  showText, 
+  disabled,
+  field,
+  form,
+  children: _,
+  ...props
+ }: BarProps) => {
+  if (disabled) {
+  return <Rating icon="heart" disabled rating={rating} maxRating={4} />;
+  }  
+  else if (field && form) {
+    const { name, value } = field;
+    const { setFieldValue } = form; 
+    return (
+      <div className="health-bar">
+        {
+          <Rating 
+          rating={value}
+          icon="heart" 
+          maxRating={4}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          onRate={(_: any, { rating }: any) => setFieldValue(name, rating)}
+          {...props}
+          />
+        }
+        {showText ? <p>{HEALTHBAR_TEXTS[rating]}</p> : null}
+      </div>
+    );
+  }
+  return <></>;
 };
 
 export default HealthRatingBar;

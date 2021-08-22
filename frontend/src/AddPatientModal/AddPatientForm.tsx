@@ -4,6 +4,9 @@ import { Field, Formik, Form } from "formik";
 
 import { TextField, SelectField, GenderOption } from "./FormField";
 import { Gender, Patient } from "../types";
+import HealthRatingBar from "../components/HealthRatingBar";
+import FormDatePicker from "../components/FormDatePicker";
+
 
 /*
  * use type Patient, but omit id and entries,
@@ -28,9 +31,10 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel }) => {
       initialValues={{
         name: "",
         ssn: "",
-        dateOfBirth: "",
+        dateOfBirth: new Date().toDateString(),
         occupation: "",
-        gender: Gender.Other
+        gender: Gender.Other,
+        healthRating: 3,
       }}
       onSubmit={onSubmit}
       validate={values => {
@@ -47,6 +51,9 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel }) => {
         }
         if (!values.occupation) {
           errors.occupation = requiredError;
+        }
+        if (!values.healthRating) {
+          errors.healthRating = requiredError;
         }
         return errors;
       }}
@@ -66,11 +73,18 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel }) => {
               name="ssn"
               component={TextField}
             />
-            <Field
+            {/* <Field
               label="Date Of Birth"
               placeholder="YYYY-MM-DD"
               name="dateOfBirth"
               component={TextField}
+            /> */}
+            {
+              }
+            <Field
+              label="Date of Birth"
+              name="DateOfBirth"
+              component={FormDatePicker}
             />
             <Field
               label="Occupation"
@@ -83,6 +97,14 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel }) => {
               name="gender"
               options={genderOptions}
             />
+            <Field
+            maxRating={4}
+            label="HealthRating"
+            name="healthRating"
+            component={HealthRatingBar}
+          />
+
+
             <Grid>
               <Grid.Column floated="left" width={5}>
                 <Button type="button" onClick={onCancel} color="red">

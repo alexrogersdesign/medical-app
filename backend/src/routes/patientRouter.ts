@@ -37,7 +37,6 @@ router.post('/:id/entries', (req, res) => {
     }
 });
 
-
 router.post('/', (req, res) => {
     const process = (newPatient: NewPatient) => {
         const result = addPatient(newPatient);

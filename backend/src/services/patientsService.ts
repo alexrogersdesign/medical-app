@@ -117,14 +117,15 @@ const validateEntries = (entries: any): Entries => {
     throw new Error ('Invalid or missing Entries : ' + String(entries));
 };
 
-export const validatePatient = ({name, dateOfBirth, ssn, gender, occupation, entries}: NewPatient): NewPatient => {
+export const validatePatient = ({name, dateOfBirth, ssn, gender, occupation, entries, healthRating}: NewPatient): NewPatient => {
     const patientToReturn = {
         name: validateName(name),
         dateOfBirth: validateDateOfBirth(dateOfBirth),
         ssn: validateSsn(ssn),
         gender: validateGender(gender),
         occupation: validateOccupation(occupation),
-        entries: validateEntries(entries) 
+        entries: validateEntries(entries),
+        healthRating: validateHealthRating(healthRating)
     };
     
     return {...patientToReturn, ...(entries && {entries:validateEntries(entries)})};
@@ -133,20 +134,13 @@ export const validatePatient = ({name, dateOfBirth, ssn, gender, occupation, ent
 const isArray = (array: any): array is any[] => {
     return Array.isArray(array);
   };
-// // eslint-disable-next-line @typescript-eslint/no-explicit-any
-// const isArray = (array: any): array is any[] => {
-//     return typeof array === 'object' || array instanceof Object;
-//   };
 
 function hasOwnProperty<X extends Record<string, unknown>, Y extends PropertyKey>
   (obj: X, prop: Y): obj is X & Record<Y, unknown> {
   // eslint-disable-next-line no-prototype-builtins
   return obj.hasOwnProperty(prop);
 }
-// function hasOwnProperty<X extends {}, Y extends PropertyKey>
-//   (obj: X, prop: Y): obj is X & Record<Y, unknown> {
-//   return obj.hasOwnProperty(prop);
-// }
+
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const validateString = (string: any): string => {
@@ -197,12 +191,6 @@ const validateSickLeave = (sickLeave:unknown): SickLeave => {
     throw new Error ('malformatted sick leave data');
 };
 
-
-// const assertNever = (value: never): never => {
-//     throw new Error(
-//       `Unhandled discriminated union member: ${JSON.stringify(value)}`
-//     );
-//   };
 const isNumber = (value:unknown): value is number => {
     return typeof value === 'number';
 };
@@ -213,12 +201,16 @@ const validateEmployer = (string: unknown): string => {
     } 
     throw new Error ('Invalid or missing Employer: ' + String(string));
 };
+const validateHealthRating = (rating:unknown): HealthCheckRating => {
+    if ( isNumber(rating) && Object.values(HealthCheckRating).includes(rating)){
+        return rating;
+    } throw new Error ('malformatted rating');
+};
 
 const validateHealthCheckRating = (rating:unknown): HealthCheckRating => {
     if ( isNumber(rating) && Object.values(HealthCheckRating).includes(rating)){
         return rating;
     } throw new Error ('malformatted rating');
-
 };
 const validateType = (type:unknown) => {
     switch (type) {

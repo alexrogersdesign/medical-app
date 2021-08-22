@@ -15,13 +15,6 @@ export enum EntryType {
   "OccupationalHealthcare"
 }
 
-// export interface Entry {
-//     id: string,
-//     description: string,
-//     creationDate: string,
-//     createdBy: string,
-//     diagnosis?: string[]
-// }
 export type Entries = Entry[] | [] ;
 
 
