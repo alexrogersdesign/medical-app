@@ -62,7 +62,7 @@ const PatientListPage: React.FC = () => {
               <Table.Cell>{patient.gender}</Table.Cell>
               <Table.Cell>{patient.occupation}</Table.Cell>
               <Table.Cell>
-                <HealthRatingBar showText={false} rating={patient.} />
+                <HealthRatingBar showText={false} rating={1} />
               </Table.Cell>
             </Table.Row>
           ))}

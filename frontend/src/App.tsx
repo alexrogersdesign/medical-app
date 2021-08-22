@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-floating-promises */
 import React from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import { Button, Divider, Header, Container } from "semantic-ui-react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Divider, Container } from "semantic-ui-react";
 
 import { apiBaseUrl } from "./constants";
 import { useStateValue } from "./state";
@@ -10,6 +10,8 @@ import { Patient, Diagnosis } from "./types";
 
 import PatientListPage from "./PatientListPage";
 import PatientDetailsPage from './PatientDetailsPage';
+
+import './styles/App.css';
 
 const App: React.FC = () => {
   const [, dispatch] = useStateValue();
@@ -51,10 +53,6 @@ const App: React.FC = () => {
     <div className="App">
       <Router>
         <Container>
-          <Header as="h2">Patient Health Portal</Header>
-          <Button as={Link} to="/" primary>
-            Home
-          </Button>
           <Divider hidden />
           <Switch>
             <Route path="/patient/:id" render={() => <PatientDetailsPage />} />

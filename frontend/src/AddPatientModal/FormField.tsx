@@ -48,7 +48,7 @@ export const TextField: React.FC<TextProps> = ({
     <label>{label}</label>
     <Field placeholder={placeholder} {...field} />
     <div style={{ color:'red' }}>
-      <ErrorMessage name={field[name]} />
+      <ErrorMessage name={field.name} />
     </div>
   </Form.Field>
 );

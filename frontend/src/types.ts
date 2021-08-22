@@ -35,6 +35,7 @@ export interface Patient {
   ssn?: string;
   dateOfBirth?: string;
   entries?: Entries;
+  healthRating?: HealthCheckRating;
 }
 
 export interface Diagnosis {
