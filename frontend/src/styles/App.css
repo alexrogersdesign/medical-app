@@ -1,3 +1,25 @@
 .App {
     padding: 20px;
 }
+.Patients {
+    padding: 10px;
+}
+.Entries_Divider {
+    padding: 15px;
+}
+.diagnosis-code {
+    color: rgb(159, 195, 230);
+}
+.label{
+    padding: 5px;
+}
+.header {
+    padding: 5px;
+}
+.list.item{
+    padding: 10px;
+    margin: 5px;
+}
+.list {
+    background-color: rgb(245, 242, 237);
+}

@@ -1,7 +1,7 @@
 export enum Gender { 
-    Male = 'male',
-    Female = 'female',
-    Other = 'other'
+    Male = 'Male',
+    Female = 'Female',
+    Other = 'Other'
  }
 export interface Diagnosis {
     code: string,
@@ -50,12 +50,12 @@ export interface BaseEntry {
     diagnosisCodes?: Array<Diagnosis['code']>;
   }
 
-// export enum HealthCheckRating {
-//     "Healthy" = 0,
-//     "LowRisk" = 1,
-//     "HighRisk" = 2,
-//     "CriticalRisk" = 3
-// }
+export enum HealthCheckRatingText {
+    "Healthy" = 0,
+    "LowRisk" = 1,
+    "HighRisk" = 2,
+    "CriticalRisk" = 3
+}
 export interface SickLeave {
     startDate: string,
     endDate: string

@@ -3,11 +3,11 @@ import { Patient, Gender } from '../types';
 const patients: Patient[] = [
   {
     id: 'd2773336-f723-11e9-8f0b-362b9e155667',
-    name: 'John McClane',
-    dateOfBirth: '1986-07-09',
-    ssn: '090786-122X',
+    name: 'Tony Halvorson',
+    dateOfBirth: '1976-03-12',
+    ssn: '133-234-1193',
     gender: Gender.Male,
-    occupation: 'New york city cop',
+    occupation: 'Product Division Facilitator',
     healthRating: 2, 
     entries: [
       {
@@ -27,11 +27,11 @@ const patients: Patient[] = [
   },
   {
     id: 'd2773598-f723-11e9-8f0b-362b9e155667',
-    name: 'Martin Riggs',
-    dateOfBirth: '1979-01-30',
-    ssn: '300179-777A',
+    name: 'Brendan Frami',
+    dateOfBirth: '1989-11-30',
+    ssn: '332-334-3311',
     gender: Gender.Male,
-    occupation: 'Cop',
+    occupation: 'International Operations Orchestrator',
     healthRating: 3, 
     entries: [
       {
@@ -52,21 +52,21 @@ const patients: Patient[] = [
   },
   {
     id: 'd27736ec-f723-11e9-8f0b-362b9e155667',
-    name: 'Hans Gruber',
+    name: 'Manuel Hills',
     dateOfBirth: '1970-04-25',
-    ssn: '250470-555L',
+    ssn: '223-443-1300',
     gender: Gender.Male,
-    occupation: 'Technician',
+    occupation: 'Direct Mobility Administrator',
     healthRating: 0, 
     entries: [],
   },
   {
     id: 'd2773822-f723-11e9-8f0b-362b9e155667',
-    name: 'Dana Scully',
-    dateOfBirth: '1974-01-05',
-    ssn: '050174-432N',
+    name: 'Rudy Dickinson',
+    dateOfBirth: '1984-05-15',
+    ssn: '132-312-4223',
     gender: Gender.Female,
-    occupation: 'Forensic Pathologist',
+    occupation: 'Principal Marketing Executive',
     healthRating: 1, 
     entries: [
       {
@@ -98,11 +98,11 @@ const patients: Patient[] = [
   },
   {
     id: 'd2773c6e-f723-11e9-8f0b-362b9e155667',
-    name: 'Matti Luukkainen',
-    dateOfBirth: '1971-04-09',
-    ssn: '090471-8890',
+    name: 'Luther Parker',
+    dateOfBirth: '1991-04-09',
+    ssn: '984-233-3221',
     gender: Gender.Male,
-    occupation: 'Digital evangelist',
+    occupation: 'Investor Quality Liaison',
     healthRating: 2, 
     entries: [
       {

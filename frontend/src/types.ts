@@ -26,6 +26,12 @@ export enum HealthCheckRating {
 //   "Hospital",
 //   "OccupationalHealthcare"
 // }
+export enum HealthCheckRatingText {
+  "Healthy" = 0,
+  "LowRisk" = 1,
+  "HighRisk" = 2,
+  "CriticalRisk" = 3
+}
 
 export interface Patient {
   id: string;

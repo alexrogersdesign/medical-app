@@ -7,7 +7,7 @@ import { Link } from"react-router-dom";
 
 // import { Patient } from "../types";
 import { apiBaseUrl } from "../constants";
-import { Container, List, Button } from "semantic-ui-react";
+import { Container, List, Button, Label, Header } from "semantic-ui-react";
 import { useParams } from 'react-router-dom';
 import { useStateValue } from "../state";
 import EntryDetails from '../components/EntryDetails';
@@ -79,32 +79,30 @@ const PatientDetailsPage: React.FC = () => {
     const renderPatient = ( ) => {
         if (patient) {
         return (
-            <div className="App">
+            <div className="Patients">
                 <PatientHeader patient={patient}/>
                 <Button as={Link} to="/" primary>
-                Home
+                    Home
                 </Button>
-                <Container textAlign="center">
-                </Container>
-                <List>
-                <List.Item>
-                    <List.Header>Patient ID</List.Header>{patient.id}                   
-                    </List.Item>
-                <List.Item>
-                    <List.Header>SSN</List.Header>{patient.ssn}                   
-                    </List.Item>
-                <List.Item>
-                    <List.Header>Occupation</List.Header>{patient.occupation}                   
-                    </List.Item>
-                <List.Item>
-                    <List.Header>gender</List.Header>{patient.gender}                   
-                    </List.Item>
-                <List.Item>
-                    <List.Header>Date of Birth</List.Header>{patient.dateOfBirth}                   
-                    </List.Item>
+                <List celled verticalAlign='middle'>
+                    <List.Item>
+                        <List.Header><Label icon="id badge outline" color="olive" content="Patient ID" ribbon/></List.Header>{patient.id}                   
+                        </List.Item>
+                    <List.Item>
+                        <List.Header><Label icon="hashtag" color="olive" content="SSN" ribbon/></List.Header>{patient.ssn}                   
+                        </List.Item>
+                    <List.Item>
+                        <List.Header><Label icon="warehouse" color="olive" content="Occupation" ribbon/></List.Header>{patient.occupation}                   
+                        </List.Item>
+                    <List.Item>
+                        <List.Header><Label icon="venus mars" color="olive" content="Gender" ribbon/></List.Header>{patient.gender}                   
+                        </List.Item>
+                    <List.Item>
+                        <List.Header><Label icon="birthday cake" color="olive" content="Date of Birth" ribbon/></List.Header>{patient.dateOfBirth}                   
+                        </List.Item>
                 </List>           
-                <Container textAlign="center">
-                    <h3>Entries</h3>
+                <Container className="Entries_Divider" >
+                    <Header  textAlign='center' floated="right" size="large"  color="black" content="Entries" />                    
                 </Container>
                 <Container>
                     {patient.entries? renderEntries() : <p>No Entries</p>}    
