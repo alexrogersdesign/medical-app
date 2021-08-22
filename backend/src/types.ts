@@ -24,6 +24,12 @@ export enum HealthCheckRating {
   HighRisk = 2,
   CriticalRisk = 3
 }
+export enum HealthRating {
+  CriticalRisk = 1,
+  HighRisk = 2,
+  LowRisk = 3,
+  Healthy = 4,
+}
 
 export interface Patient {
     id: string,
@@ -33,7 +39,7 @@ export interface Patient {
     gender: string,
     occupation: string,
     entries: Entries,
-    healthRating: HealthCheckRating
+    healthRating: HealthRating,
 }
 
 export interface BaseEntry {

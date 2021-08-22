@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/prefer-as-const */
 import patientsData from '../data/patients';
-import { Patient,  PublicPatient, NewPatient, Gender, Entries, Entry, Discharge, DistributiveOmit, BaseEntry, SickLeave, HealthCheckRating, NewEntry, EntryType} from '../types';
+import { Patient,  PublicPatient, NewPatient, Gender, Entries, Entry, Discharge, DistributiveOmit, BaseEntry, SickLeave, HealthCheckRating, NewEntry, EntryType, HealthRating} from '../types';
 // import { v4 as uuid } from 'uuid';
 import uuid = require('uuid');
 
@@ -201,8 +201,8 @@ const validateEmployer = (string: unknown): string => {
     } 
     throw new Error ('Invalid or missing Employer: ' + String(string));
 };
-const validateHealthRating = (rating:unknown): HealthCheckRating => {
-    if ( isNumber(rating) && Object.values(HealthCheckRating).includes(rating)){
+const validateHealthRating = (rating:unknown): HealthRating => {
+    if ( isNumber(rating) && Object.values(HealthRating).includes(rating)){
         return rating;
     } throw new Error ('malformatted rating');
 };
