@@ -17,9 +17,13 @@
           "error", { "argsIgnorePattern": "^_" }
       ],
       "@typescript-eslint/no-explicit-any": 1,
+      "@typescript-eslint/no-unsafe-assignment": "warn",
+      "@typescript-eslint/no-unsafe-call": "warn",
       "no-case-declarations": 0,
       "react/prop-types": 0,
-      "no-floating-promises": 0
+      "no-floating-promises": 0,
+      "no-unsafe-any": 0
+
 
     },
     "settings": {

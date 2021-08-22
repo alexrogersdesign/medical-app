@@ -21,13 +21,11 @@
     "downlevelIteration": true,
     "allowJs": true,
     "noFallthroughCasesInSwitch": true,
-
-
   },
   "include": [
     "src"
   ],
   "exclude": [
-    "../src"
+    "../backend"
   ]
 }

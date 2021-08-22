@@ -1,5 +1,5 @@
 {
-  "name": "patientor_backend",
+  "name": "medical-app-backend",
   "version": "1.0.0",
   "description": "",
   "main": "/src/index.ts",
@@ -8,7 +8,7 @@
     "dev": "ts-node-dev ./src/index.ts",
     "lint": "eslint --ext .ts .",
     "start": "node build/index.js",
-    "dev:front": "cd patientor && npm run start "
+    "dev:front": "cd ../frontend && npm run start "
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,6 @@
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "eslint": "^7.11.0",
-    "react-context-devtool": "^2.0.0",
     "ts-node-dev": "^1.0.0",
     "typescript": "^4.0.3"
   }
