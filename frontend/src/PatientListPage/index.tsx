@@ -9,6 +9,8 @@ import AddPatientModal from "../AddPatientModal";
 import { Patient } from "../types";
 import { apiBaseUrl } from "../constants";
 import HealthRatingBar from "../components/HealthRatingBar";
+import HomeHeader from "../components/HomeHeader";
+
 import { useStateValue } from "../state";
 
 const PatientListPage: React.FC = () => {
@@ -40,8 +42,9 @@ const PatientListPage: React.FC = () => {
 
   return (
     <div className="App">
+          <HomeHeader/>
       <Container textAlign="center">
-        <h3>Patient list</h3>
+        <h3>Current Patients</h3>
       </Container>
       <Table celled>
         <Table.Header>
@@ -59,7 +62,7 @@ const PatientListPage: React.FC = () => {
               <Table.Cell>{patient.gender}</Table.Cell>
               <Table.Cell>{patient.occupation}</Table.Cell>
               <Table.Cell>
-                <HealthRatingBar showText={false} rating={1} />
+                <HealthRatingBar showText={false} rating={patient.} />
               </Table.Cell>
             </Table.Row>
           ))}
