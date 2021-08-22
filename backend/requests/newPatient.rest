@@ -7,5 +7,5 @@ content-type: application/json
         "ssn": "235435-101X",
         "gender": "male",
         "occupation": "student",
-        "healthRating": 3
+        "healthRating": 4
 }
