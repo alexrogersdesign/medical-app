@@ -1,6 +1,7 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Form } from 'semantic-ui-react';
 
 interface FormValues {
     name: string,
@@ -12,6 +13,7 @@ interface FormValues {
   }
   
   type IDateProps = {
+    label: string,
     field: FormValues,
     form: IForm,
     children: unknown
@@ -19,15 +21,12 @@ interface FormValues {
 
 
 const FormDatePicker: React.FC<IDateProps> = ({
+    label,
     field,
     form,
     children: _,
     ...props
 }) => {
-    // let selectedDate
-    // useEffect(() => {
-    //     selectedDate= new Date();
-    // }, []);
 
     const isValid = (date:string): boolean => {
         const convertedDate = new Date(date);
@@ -40,15 +39,18 @@ const FormDatePicker: React.FC<IDateProps> = ({
         let selectedDate = new Date(value);
         if(!isValid(value)){ selectedDate = new Date(); }
     return (
-        <div>
-            <DatePicker 
-              selected={selectedDate}
-              dateFormat="MMMM d, yyyy"
-              className="form-control"
-              onChange={(date:Date) => setFieldValue(name, date.toISOString().split('T')[0])}
-              {...props}
-            />
-        </div>
+        <>
+            <Form.Field>
+                <label>{label}</label>
+                <DatePicker 
+                selected={selectedDate}
+                dateFormat="MMMM d, yyyy"
+                className="form-control"
+                onChange={(date:Date) => setFieldValue(name, date.toISOString().split('T')[0])}
+                {...props}
+                />
+            </Form.Field>
+        </>
     );}
     else return <></>;
 };

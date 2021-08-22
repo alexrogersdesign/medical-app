@@ -73,14 +73,6 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel }) => {
               name="ssn"
               component={TextField}
             />
-            {/* <Field
-              label="Date Of Birth"
-              placeholder="YYYY-MM-DD"
-              name="dateOfBirth"
-              component={TextField}
-            /> */}
-            {
-              }
             <Field
               label="Date of Birth"
               name="DateOfBirth"
@@ -98,13 +90,12 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel }) => {
               options={genderOptions}
             />
             <Field
-            maxRating={4}
-            label="HealthRating"
-            name="healthRating"
-            component={HealthRatingBar}
-          />
-
-
+              maxRating={4}
+              label="Health Rating"
+              name="healthRating"
+              showText={true}
+              component={HealthRatingBar}
+            />
             <Grid>
               <Grid.Column floated="left" width={5}>
                 <Button type="button" onClick={onCancel} color="red">

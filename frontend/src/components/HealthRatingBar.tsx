@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rating } from 'semantic-ui-react';
+import { Form, Rating } from 'semantic-ui-react';
 
 interface FormValues {
   name: string,
@@ -21,6 +21,7 @@ export interface FormikActions<Values> {
 type BarProps = {
   rating: number;
   showText: boolean;
+  label?: string;
   disabled?: true;
   field?: FormValues,
   form?: IForm,
@@ -37,8 +38,9 @@ const HEALTHBAR_TEXTS = [
 
 const HealthRatingBar: React.FC<BarProps> = ({ 
   rating, 
-  showText, 
+  showText,
   disabled,
+  label,
   field,
   form,
   children: _,
@@ -51,19 +53,18 @@ const HealthRatingBar: React.FC<BarProps> = ({
     const { name, value } = field;
     const { setFieldValue } = form; 
     return (
-      <div className="health-bar">
-        {
-          <Rating 
-          rating={value}
-          icon="heart" 
-          maxRating={4}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          onRate={(_: any, { rating }: any) => setFieldValue(name, rating)}
-          {...props}
-          />
-        }
+      <Form.Field className="health-bar">
+        <label>{label}</label>
+        <Rating 
+        rating={value}
+        icon="heart" 
+        maxRating={4}
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        onRate={(_: any, { rating }: any) => setFieldValue(name, rating)}
+        {...props}
+        />
         {showText ? <p>{HEALTHBAR_TEXTS[rating]}</p> : null}
-      </div>
+      </Form.Field>
     );
   }
   return <></>;
