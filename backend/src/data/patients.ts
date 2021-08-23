@@ -57,7 +57,7 @@ const patients: Patient[] = [
     ssn: '223-443-1300',
     gender: Gender.Male,
     occupation: 'Direct Mobility Administrator',
-    healthRating: 0, 
+    healthRating: 1, 
     entries: [],
   },
   {

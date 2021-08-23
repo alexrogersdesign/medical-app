@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import React from "react";
 import axios from "axios";
-import { Container, Table, Button } from "semantic-ui-react";
+import { Table, Button, Segment, Header, Icon } from "semantic-ui-react";
 import { Link } from"react-router-dom";
 
 import { PatientFormValues } from "../AddPatientModal/AddPatientForm";
@@ -18,7 +18,6 @@ const PatientListPage: React.FC = () => {
 
   const [modalOpen, setModalOpen] = React.useState<boolean>(false);
   const [error, setError] = React.useState<string | undefined>();
-
   const openModal = (): void => setModalOpen(true);
 
   const closeModal = (): void => {
@@ -42,39 +41,46 @@ const PatientListPage: React.FC = () => {
 
   return (
     <div className="App">
-          <HomeHeader/>
-      <Container textAlign="center">
-        <h3>Current Patients</h3>
-      </Container>
-      <Table celled>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Gender</Table.HeaderCell>
-            <Table.HeaderCell>Occupation</Table.HeaderCell>
-            <Table.HeaderCell>Health Rating</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {Object.values(patients).map((patient: Patient) => (
-            <Table.Row key={patient.id}>
-              <Table.Cell><Link to={'/patient/'+patient.id}>{patient.name}</Link></Table.Cell>
-              <Table.Cell>{patient.gender}</Table.Cell>
-              <Table.Cell>{patient.occupation}</Table.Cell>
-              <Table.Cell>
-                <HealthRatingBar disabled={true} showText={false} rating={patient.healthRating} />
-              </Table.Cell>
+      <HomeHeader/>
+      <Segment placeholder>
+      <Segment textAlign="center">
+        <Header as="h3">
+          <Icon name="users"/>
+          <Header.Content>
+            Current Patients
+          </Header.Content>
+        </Header>
+      </Segment>
+        <Table striped>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Gender</Table.HeaderCell>
+              <Table.HeaderCell>Occupation</Table.HeaderCell>
+              <Table.HeaderCell>Health Rating</Table.HeaderCell>
             </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
-      <AddPatientModal
-        modalOpen={modalOpen}
-        onSubmit={submitNewPatient}
-        error={error}
-        onClose={closeModal}
-      />
-      <Button onClick={() => openModal()}>Add New Patient</Button>
+          </Table.Header>
+          <Table.Body>
+            {Object.values(patients).map((patient: Patient) => (
+              <Table.Row key={patient.id}>
+                <Table.Cell><Link to={'/patient/'+patient.id}>{patient.name}</Link></Table.Cell>
+                <Table.Cell>{patient.gender}</Table.Cell>
+                <Table.Cell>{patient.occupation}</Table.Cell>
+                <Table.Cell>
+                  <HealthRatingBar disabled={true} showText={false} rating={patient.healthRating} />
+                </Table.Cell>
+              </Table.Row>
+            ))}
+          </Table.Body>
+        </Table>
+        <AddPatientModal
+          modalOpen={modalOpen}
+          onSubmit={submitNewPatient}
+          error={error}
+          onClose={closeModal}
+        />
+        <Button onClick={() => openModal()}>Add New Patient</Button>
+      </Segment>
     </div>
   );
 };

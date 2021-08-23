@@ -10,7 +10,7 @@ interface Props {
 }
 
 const AddPatientModal: React.FC<Props> = ({ modalOpen, onClose, onSubmit, error }: Props) => (
-  <Modal open={modalOpen} onClose={onClose} centered={false} closeIcon>
+  <Modal inverted open={modalOpen} onClose={onClose} centered={false} closeIcon>
     <Modal.Header>Add a new patient</Modal.Header>
     <Modal.Content>
       {error && <Segment inverted color="red">{`Error: ${error}`}</Segment>}

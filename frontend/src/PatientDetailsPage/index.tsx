@@ -7,7 +7,7 @@ import { Link } from"react-router-dom";
 
 // import { Patient } from "../types";
 import { apiBaseUrl } from "../constants";
-import { Container, List, Button, Label, Header } from "semantic-ui-react";
+import { Container, List, Button, Label, Header, Segment } from "semantic-ui-react";
 import { useParams } from 'react-router-dom';
 import { useStateValue } from "../state";
 import EntryDetails from '../components/EntryDetails';
@@ -79,7 +79,8 @@ const PatientDetailsPage: React.FC = () => {
     const renderPatient = ( ) => {
         if (patient) {
         return (
-            <div className="Patients">
+            
+            <Container className="Patients">
                 <PatientHeader patient={patient}/>
                 <Button as={Link} to="/" primary>
                     Home
@@ -114,7 +115,7 @@ const PatientDetailsPage: React.FC = () => {
                     onClose={closeModal}
                 />
                 <Button onClick={() => openModal()}>Add New Entry</Button>                
-          </div>
+          </Container>
         );
       }
     };
