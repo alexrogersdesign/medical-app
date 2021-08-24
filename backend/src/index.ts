@@ -21,10 +21,9 @@ const options: cors.CorsOptions = {
 
 app.use(cors(options)); 
 
-// app.use('/',express.static("/build/index.html") as RequestHandler)
-app.use(express.static(path.join(__dirname, "../build" )));
+app.use(express.static(path.join(__dirname, "../public" )));
 app.get("/", (_req, res) => {
-  res.sendFile(path.join(__dirname, "../build" , "index.html"));
+  res.sendFile(path.join(__dirname, "../public" , "index.html"));
  });
 function normalizePort(val: string) {
   var port = parseInt(val, 10);
