@@ -2,8 +2,8 @@
   "name": "medical-app-backend",
   "version": "1.0.0",
   "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=7.0.0"
+    "node": "14.17.2",
+    "npm": "7.19.1"
   },
   "description": "",
   "main": "/src/index.ts",
@@ -15,7 +15,7 @@
     "start2": "ts-node ./src/index.ts",
     "build": "npx tsc",
     "dev:front": "cd ../frontend && npm run start ",
-    "heroku-postbuild": "npm install && npm run build",
+    "heroku-postbuild": "npm install",
     "heroku-postbuild2": "cd client && npm install && npm run build"
   },
   "repository": {
