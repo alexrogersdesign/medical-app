@@ -15,7 +15,7 @@
     "start2": "ts-node ./src/index.ts",
     "build": "npx tsc",
     "dev:front": "cd ../frontend && npm run start ",
-    "heroku-postbuild": "npm install && npm build",
+    "heroku-postbuild": "npm install && npm run build",
     "heroku-postbuild2": "cd client && npm install && npm run build"
   },
   "repository": {
