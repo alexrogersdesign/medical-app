@@ -7,7 +7,7 @@
     "tsc": "tsc",
     "dev": "ts-node-dev ./src/index.ts",
     "lint": "eslint --ext .ts .",
-    "start": "node build/index.js",
+    "start": "ts-node ./src/index.ts",
     "dev:front": "cd ../frontend && npm run start "
   },
   "repository": {
@@ -21,15 +21,17 @@
   },
   "homepage": "https://github.com/alexrogersdesign/medical-app#readme",
   "dependencies": {
-    "@types/node": "^16.7.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "uuid": "^8.3.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
-    "@types/express": "^4.17.8",
+    "@types/debug": "^4.1.7",
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.7.1",
     "@types/uuid": "^8.3.0",
+    "@types/webpack-env": "^1.16.2",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
     "eslint": "^7.11.0",
