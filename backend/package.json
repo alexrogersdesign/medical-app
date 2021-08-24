@@ -9,8 +9,7 @@
     "lint": "eslint --ext .ts .",
     "start": "ts-node ./src/index.ts",
     "dev:front": "cd ../frontend && npm run start ",
-    "install",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
