@@ -1,3 +1,3 @@
 window.env = {
-  "DATABASE_URL": "http://localhost:3001/api"
+  "DATABASE_URL": "http://localhost:80/api"
 };
