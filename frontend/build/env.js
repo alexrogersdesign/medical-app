@@ -1,3 +1,3 @@
 window.env = {
-  "DATABASE_URL": "http://localhost:80/api"
+  "DATABASE_URL": "https://medical-tracker.herokuapp.com/api"
 };
