@@ -28,6 +28,7 @@ const PatientListPage: React.FC = () => {
   const submitNewPatient = async (values: PatientFormValues) => {
     try {
       const { data: newPatient } = await axios.post<Patient>(
+        // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
         `${apiBaseUrl}/patients`,
         values
       );

@@ -39,6 +39,7 @@ const PatientDetailsPage: React.FC = () => {
     const submitNewEntry = async (values: EntryFormValues) => {
     try {
             const { data: newEntry } = await axios.post<Entry>(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${apiBaseUrl}/patients/${id}/entries`,
             values
         );
@@ -58,6 +59,7 @@ const PatientDetailsPage: React.FC = () => {
     const getPatientData = async (): Promise<void> => {
         try {
            const { data } = await axios.get<Patient>(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `${apiBaseUrl}/patients/${id}`     
           );
            if (data) {

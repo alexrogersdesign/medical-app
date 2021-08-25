@@ -16,11 +16,13 @@ import './styles/App.css';
 const App: React.FC = () => {
   const [, dispatch] = useStateValue();
   React.useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
     axios.get<void>(`${apiBaseUrl}/ping`);
 
     const fetchPatientList = async () => {
       try {
         const { data: patientListFromApi } = await axios.get<Patient[]>(
+          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           `${apiBaseUrl}/patients`
         );
         dispatch({ type: "SET_PATIENT_LIST", payload: patientListFromApi });
@@ -35,6 +37,7 @@ const App: React.FC = () => {
     const getDiagnosisData = async (): Promise<void> => {
       try {
          const { data } = await axios.get<Diagnosis[]>(
+          // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
           `${apiBaseUrl}/diagnosis`     
         );
          if (data) {
