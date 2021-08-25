@@ -2,7 +2,7 @@
 import React from "react";
 import axios from "axios";
 import { Table, Button, Segment, Header, Icon } from "semantic-ui-react";
-import { Link } from"react-router-dom";
+import { Link, useHistory } from"react-router-dom";
 
 import { PatientFormValues } from "../AddPatientModal/AddPatientForm";
 import AddPatientModal from "../AddPatientModal";
@@ -40,6 +40,12 @@ const PatientListPage: React.FC = () => {
     }
   };
 
+  // adding support for clickable rows 
+  const history = useHistory();
+  const handleRowClick = (patient:Patient) => {
+    history.push('/patient/'+patient.id);
+  };
+
   return (
     <div className="App">
       <HomeHeader/>
@@ -52,7 +58,7 @@ const PatientListPage: React.FC = () => {
           </Header.Content>
         </Header>
       </Segment>
-        <Table striped>
+        <Table striped selectable >
           <Table.Header>
             <Table.Row>
               <Table.HeaderCell>Name</Table.HeaderCell>
@@ -63,7 +69,7 @@ const PatientListPage: React.FC = () => {
           </Table.Header>
           <Table.Body>
             {Object.values(patients).map((patient: Patient) => (
-              <Table.Row key={patient.id}>
+              <Table.Row key={patient.id} onClick={()=> handleRowClick(patient)}>
                 <Table.Cell><Link to={'/patient/'+patient.id}>{patient.name}</Link></Table.Cell>
                 <Table.Cell>{patient.gender}</Table.Cell>
                 <Table.Cell>{patient.occupation}</Table.Cell>

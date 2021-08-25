@@ -2,4 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import env from "react-dotenv";
 
-export const apiBaseUrl = env.DATABASE_URL;
+let apiBaseUrl = "localhost:3001/api"; 
+
+if (process.env.NODE_ENV === 'production') {
+    apiBaseUrl = env.DATABASE_URL;
+}
+apiBaseUrl = env.DATABASE_URL;
+export { apiBaseUrl }; 
+
+// console.log(apiBaseUrl);
+// console.log(process.env.NODE_ENV);

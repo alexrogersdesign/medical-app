@@ -3,10 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react-datepicker": "^3.1.1",
-    "@types/uuid": "^8.3.1",
     "axios": "^0.19.2",
     "bootstrap": "^5.1.0",
+    "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "formik": "^2.2.1",
     "react": "^16.14.0",
@@ -35,7 +34,8 @@
   },
   "scripts": {
     "start": "react-dotenv && react-scripts start",
-    "build": "react-dotenv && react-scripts build",
+    "build": "react-dotenv && react-scripts build && cp -r build/* ../backend/public",
+    "dev": "react-dotenv && react-scripts start",
     "test": "react-dotenv && react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint './src/**/*.{ts,tsx}'",
@@ -54,6 +54,8 @@
     ]
   },
   "react-dotenv": {
-    "whitelist": ["DATABASE_URL"]
+    "whitelist": [
+      "DATABASE_URL"
+    ]
   }
 }
