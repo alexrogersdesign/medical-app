@@ -7,7 +7,7 @@ import { Link } from"react-router-dom";
 
 // import { Patient } from "../types";
 import { apiBaseUrl } from "../constants";
-import { Container, List, Button, Label, Header, Segment } from "semantic-ui-react";
+import { Container, List, Button, Label, Header } from "semantic-ui-react";
 import { useParams } from 'react-router-dom';
 import { useStateValue } from "../state";
 import EntryDetails from '../components/EntryDetails';

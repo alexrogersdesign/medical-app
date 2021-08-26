@@ -65,7 +65,7 @@ const patients: Patient[] = [
     name: 'Rudy Dickinson',
     dateOfBirth: '1984-05-15',
     ssn: '132-312-4223',
-    gender: Gender.Female,
+    gender: Gender.Male,
     occupation: 'Principal Marketing Executive',
     healthRating: 1, 
     entries: [

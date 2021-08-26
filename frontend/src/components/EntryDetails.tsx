@@ -33,26 +33,28 @@ const EntryDetails: React.FC<{ entry:Entry }> = ({ entry }) => {
                     <List.Item >
                         <List.Header><Label icon="user md" color="teal" content="Specialist" ribbon/></List.Header>{entry.specialist}
                     </List.Item>
-                    <List.Item >
-                        <List.Header><Label icon="code" color="teal" content="Diagnosis Codes" ribbon/></List.Header>
-                        <List celled verticalAlign="middle">
-                            {
-                            entry.diagnosisCodes?.map(code => {
-                                if (diagnosisData){
-                                    const definition = Object.values(diagnosisData).find((diagnosis:Diagnosis) => diagnosis.code === code );
-                                    if (definition) {
-                                        return (
-                                            <List.Item key={uuid()}>
-                                                <List.Header className="diagnosis-code"><List.Icon name="plus" />{code}</List.Header>
-                                                <List.Description>{definition.name}</List.Description>
-                                            </List.Item>);
-                                    }                                     
+                    {console.log(entry.diagnosisCodes)}
+                    { entry.diagnosisCodes && entry.diagnosisCodes.length > 0 &&
+                        <List.Item >
+                            <List.Header><Label icon="code" color="teal" content="Diagnosis Codes" ribbon/></List.Header>
+                            <List celled verticalAlign="middle">
+                                {
+                                entry.diagnosisCodes?.map(code => {
+                                    if (diagnosisData){
+                                        const definition = Object.values(diagnosisData).find((diagnosis:Diagnosis) => diagnosis.code === code );
+                                        if (definition) {
+                                            return (
+                                                <List.Item key={uuid()}>
+                                                    <List.Header className="diagnosis-code"><List.Icon name="plus" />{code}</List.Header>
+                                                    <List.Description>{definition.name}</List.Description>
+                                                </List.Item>);
+                                        }                                     
+                                    }
+                                    return <List.Item key={uuid()}>{code}</List.Item>;
+                                })
                                 }
-                                return <List.Item key={uuid()}>{code}</List.Item>;
-                            })
-                            }
-                        </List>
-                    </List.Item>  
+                            </List>
+                        </List.Item>  }
                 </List>              
             </div>
         );

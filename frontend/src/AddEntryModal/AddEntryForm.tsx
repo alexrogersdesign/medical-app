@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/unbound-method */
-import React, { useState } from "react";
+import React from "react";
 import { Grid, Button } from "semantic-ui-react";
 import { Field, Formik, Form, FormikProps, ArrayHelpers  } from "formik";
 // import { v4 as uuidv4 } from 'uuid';
@@ -46,7 +46,7 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel}) => {
   const baseValues = {
     type: EntryType.HealthCheck,
     specialist: "",
-    diagnosisCodes: [''],
+    diagnosisCodes: [],
     description: "",
   };
   const healthCheckValues = {
