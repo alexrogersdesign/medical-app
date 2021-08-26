@@ -21,7 +21,21 @@ diagnosis-code {
     margin: 5px;
 }
 .list {
-    background-color: rgb(248, 245, 238);
+    background-color: rgb(249,250,251);
     margin: 200px;
     padding: 300px;
+}
+.Image {
+    margin: 10px;
+}
+.patient-header {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+.patient-body {
+    font-size: small;
+}
+.patient-list-header {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(116,208,190);
 }

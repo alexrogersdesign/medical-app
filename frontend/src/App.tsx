@@ -2,11 +2,12 @@
 import React from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { Divider, Container } from "semantic-ui-react";
+import { Divider, Container, Menu, Image, Header } from "semantic-ui-react";
 
 import { apiBaseUrl } from "./constants";
 import { useStateValue } from "./state";
 import { Patient, Diagnosis } from "./types";
+import logo from "./assets/logo33.jpeg";
 
 import PatientListPage from "./PatientListPage";
 import PatientDetailsPage from './PatientDetailsPage';
@@ -54,6 +55,12 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <Container className="Menu">
+        <Image src={logo}
+        className="Image"
+        size="medium"
+        />
+      </Container>
       <Router>
         <Container>
           <Divider hidden />

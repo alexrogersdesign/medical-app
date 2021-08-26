@@ -85,7 +85,7 @@ const PatientDetailsPage: React.FC = () => {
             <Container className="Patients">
                 <PatientHeader patient={patient}/>
                 <Button as={Link} to="/" primary>
-                    Home
+                    Return
                 </Button>
                 <List celled verticalAlign='middle'>
                     <List.Item>

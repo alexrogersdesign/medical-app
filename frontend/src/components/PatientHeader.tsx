@@ -9,7 +9,7 @@ interface IPatientHeader {
 const PatientHeader: React.FC <IPatientHeader> = ({patient}) => (
   <div>
     <Header as='h2' icon textAlign='center'>
-      <Icon name='user' circular />
+      <Icon name='user' circular size="mini"/>
       <Header.Content>{patient.name}</Header.Content>
     </Header>
   </div>

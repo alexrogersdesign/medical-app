@@ -4,13 +4,13 @@ import axios from "axios";
 import { Table, Button, Segment, Header, Icon } from "semantic-ui-react";
 import { useHistory } from"react-router-dom";
 
+
 import { PatientFormValues } from "../AddPatientModal/AddPatientForm";
 import AddPatientModal from "../AddPatientModal";
 import { Patient } from "../types";
 import { apiBaseUrl } from "../constants";
 import HealthRatingBar from "../components/HealthRatingBar";
 import HomeHeader from "../components/HomeHeader";
-
 import { useStateValue } from "../state";
 
 const PatientListPage: React.FC = () => {
@@ -48,12 +48,13 @@ const PatientListPage: React.FC = () => {
 
   return (
     <div className="App">
+   
       <HomeHeader/>
       <Segment placeholder>
       <Segment textAlign="center">
         <Header as="h3">
-          <Icon name="users"/>
-          <Header.Content>
+          <Icon size="tiny" name="users"/>
+          <Header.Content className="patient-list-header">
             Current Patients
           </Header.Content>
         </Header>
@@ -61,13 +62,13 @@ const PatientListPage: React.FC = () => {
         <Table striped selectable >
           <Table.Header>
             <Table.Row>
-              <Table.HeaderCell>Name</Table.HeaderCell>
-              <Table.HeaderCell>Gender</Table.HeaderCell>
-              <Table.HeaderCell>Occupation</Table.HeaderCell>
-              <Table.HeaderCell>Health Rating</Table.HeaderCell>
+              <Table.HeaderCell className="patient-header">Name</Table.HeaderCell>
+              <Table.HeaderCell className="patient-header">Gender</Table.HeaderCell>
+              <Table.HeaderCell className="patient-header">Occupation</Table.HeaderCell>
+              <Table.HeaderCell className="patient-header">Health Rating</Table.HeaderCell>
             </Table.Row>
           </Table.Header>
-          <Table.Body>
+          <Table.Body className="patient-body">
             {Object.values(patients).map((patient: Patient) => (
               <Table.Row key={patient.id} onClick={()=> handleRowClick(patient)}>
                 <Table.Cell>{patient.name}</Table.Cell>
