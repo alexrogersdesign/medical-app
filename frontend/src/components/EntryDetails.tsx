@@ -10,13 +10,13 @@ const EntryDetails: React.FC<{ entry:Entry }> = ({ entry }) => {
     const renderHealthCheck = (rating:number) => {
         switch (rating) {
             case 0: 
-                return <Label icon="heart" size='large' ><Icon name="heart" color="green"/> {HealthCheckRatingText[0]} </Label>;
+                return <Label><Icon name="heart" color="green"/> {HealthCheckRatingText[0]} </Label>;
             case 1: 
-                return <Label icon="heart" size='large' ><Icon name="heart" color="yellow"/> {HealthCheckRatingText[1]} </Label>;
+                return <Label><Icon name="heart" color="yellow"/> {HealthCheckRatingText[1]} </Label>;
             case 2: 
-                return <Label icon="heart" size='large' ><Icon name="heart" color="orange"/>     {HealthCheckRatingText[2]} </Label>;
+                return <Label><Icon name="heart" color="orange"/> {HealthCheckRatingText[2]} </Label>;
             case 3: 
-                return <Label icon="heart" size='large' ><Icon name="heart" color="red"/> {HealthCheckRatingText[3]} </Label>;
+                return <Label><Icon name="heart" color="red"/> {HealthCheckRatingText[3]} </Label>;
         }
     };
 
