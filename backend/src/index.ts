@@ -11,7 +11,6 @@ import * as path from 'path';
 
 
 const app = express();
-// app.use(cors);
 app.use(express.json() as RequestHandler);
 
 const allowedOrigins = ['http://localhost:3000'];
@@ -97,7 +96,3 @@ const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
-// function normalizePort(arg0: string) {
-//   throw new Error('Function not implemented.');
-// }

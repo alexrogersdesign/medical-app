@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/prefer-as-const */
 import patientsData from '../data/patients';
 import { Patient,  PublicPatient, NewPatient, Gender, Entries, Entry, Discharge, DistributiveOmit, BaseEntry, SickLeave, HealthCheckRating, NewEntry, EntryType, HealthRating} from '../types';
-// import { v4 as uuid } from 'uuid';
 import uuid = require('uuid');
 
 
@@ -12,8 +11,7 @@ export const getPatients = (): Patient[] => {
 };
 
 export const getPatientsNonSensitive = (): PublicPatient[] => {
-    // const redactedPatientsList = {...patientsData};
-    // console.log(...patientsData);
+
     const redactedPatientsList: PublicPatient[] = patientsList.map(patient => { 
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const {ssn, ...rest} = patient;
@@ -250,7 +248,6 @@ export const validateNewEntry = (entry:NewEntry): NewEntry => {
                     sickLeave: validateSickLeave(entry.sickLeave) 
                 };
             }
-                // entry.sickLeave? entryData.sickLeave = validateSickLeave(entry.sickLeave): null;
                 return entryData;
             } else if (entry.type === 'HealthCheck'){
                 return {

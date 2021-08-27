@@ -20,7 +20,6 @@ interface Params {
 
 const PatientDetailsPage: React.FC = () => {
     const {id} = useParams<Params>();
-    // const [patient, setPatient] = useState<Patient | undefined>();
     const [{ patientDetails: patient }, dispatch] = useStateValue();
     const [modalOpen, setModalOpen] = React.useState<boolean>(false);
     const [error, setError] = React.useState<string | undefined>();
@@ -113,7 +112,7 @@ const PatientDetailsPage: React.FC = () => {
                     error={error}
                     onClose={closeModal}
                 />
-                <Button color="google plus" onClick={() => openModal()}>Add New Entry</Button>                
+                <Button color="gre" onClick={() => openModal()}>Add New Entry</Button>                
           </Container>
         );
       }
