@@ -5,9 +5,9 @@ export interface Diagnosis {
 }
 
 export enum Gender {
-  Male = "male",
-  Female = "female",
-  Other = "other"
+  Male = "Male",
+  Female = "Female",
+  Other = "Other"
 }
 
 export enum EntryType  {
@@ -21,11 +21,7 @@ export enum HealthCheckRating {
   HighRisk = 2,
   CriticalRisk = 3
 }
-// export enum EntryType {
-  //   "HealthCheck",
-//   "Hospital",
-//   "OccupationalHealthcare"
-// }
+
 export enum HealthCheckRatingText {
   "Healthy" = 0,
   "LowRisk" = 1,

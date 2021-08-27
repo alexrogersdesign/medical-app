@@ -101,8 +101,9 @@ const patients: Patient[] = [
         sickLeave: {
           startDate: '2019-08-05',
           endDate: '2019-08-28',
-        },
-    ],
+        }
+      }
+    ]
   },
   {
     id: 'd2773822-f723-11e9-8f0b-362b9e155667',

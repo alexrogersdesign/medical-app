@@ -4,7 +4,6 @@
 import React from "react";
 import { Grid, Button } from "semantic-ui-react";
 import { Field, Formik, Form, FormikProps, ArrayHelpers  } from "formik";
-// import { v4 as uuidv4 } from 'uuid';
 import { TextField, SelectEntry, SelectRating, EntryOption, HealthCheckRatingOption, DiagnosisSelection } from "./FormField";
 import { EntryType, HealthCheckRating, NewEntry } from "../types";
 import { useStateValue } from "../state";
@@ -80,7 +79,6 @@ export const AddPatientForm: React.FC<Props> = ({ onSubmit, onCancel}) => {
   }
   function isValidDate(dateString:string): boolean {
     const regEx = /^\d{4}-\d{2}-\d{2}$/;
-    // if(!dateString.exec(regEx)) return false;  // Invalid format
     if(!regEx.exec(dateString)) return false;  // Invalid format
     const date = new Date(dateString);
     const dateInMS = date.getTime();

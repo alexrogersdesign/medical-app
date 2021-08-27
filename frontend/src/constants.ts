@@ -9,6 +9,3 @@ if (process.env.NODE_ENV === 'production') {
 }
 apiBaseUrl = env.DATABASE_URL;
 export { apiBaseUrl }; 
-
-// console.log(apiBaseUrl);
-// console.log(process.env.NODE_ENV);

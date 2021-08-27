@@ -23,10 +23,7 @@ export type Action =
       targetId: string
       payload: Entry;
     };
-// const checkEntries = (entries: unknown) :entries is Entry[] => {
-//   if (Array.isArray(entries) && entries.every((entry: Entry) => Object.values(EntryType).includes(entry.type) ) ) return true;
-//   else return false;
-// };
+
 
 export const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -75,30 +72,6 @@ export const reducer = (state: State, action: Action): State => {
         }
     
       };
-      // case "ADD_ENTRY":
-      //   if (!state.patients[action.targetId]) throw new Error('Patient not found');
-      //   const patientToUpdate = state.patients[action.targetId];
-      //   if (!action.payload) throw new Error('missing payload');
-      //   if (!patientToUpdate.entries) {
-      //     patientToUpdate.entries = [action.payload];
-      //   } else if (!checkEntries(patientToUpdate.entries)) {
-      //      console.log(patientToUpdate);
-      //      throw new Error('malformatted entry');
-      //   } else {
-      //     const entries = patientToUpdate.entries as Entry[];
-      //     patientToUpdate.entries= [
-      //       ...entries,
-      //       action.payload
-      //     ];
-      //   }
-      // return {
-      //   ...state,
-      //   [action.targetId]: patientToUpdate
-      //   // patients: {
-      //   //   ...state.patients,
-      //   //   [action.targetId]: patientToUpdate
-      //   // }
-      // };
     default:
       return state;
   }

@@ -5,7 +5,7 @@ content-type: application/json
         "name": "Roosevelt Kessler",
         "dateOfBirth": "1993-11-09",
         "ssn": "235435-101X",
-        "gender": "male",
+        "gender": "Male",
         "occupation": "student",
         "healthRating": 4
 }
