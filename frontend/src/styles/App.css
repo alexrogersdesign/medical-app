@@ -31,6 +31,8 @@ diagnosis-code {
 .patient-header {
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-size: small;
+    background-color: blue;
+    color: #000;
 }
 .patient-body {
     font-size: small;
@@ -38,4 +40,7 @@ diagnosis-code {
 .patient-list-header {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(116,208,190);
+}
+.home-header-content {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }

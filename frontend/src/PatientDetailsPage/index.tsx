@@ -84,7 +84,7 @@ const PatientDetailsPage: React.FC = () => {
             
             <Container className="Patients">
                 <PatientHeader patient={patient}/>
-                <Button as={Link} to="/" primary>
+                <Button color="grey" as={Link} to="/" primary>
                     Return
                 </Button>
                 <List celled verticalAlign='middle'>
@@ -116,7 +116,7 @@ const PatientDetailsPage: React.FC = () => {
                     error={error}
                     onClose={closeModal}
                 />
-                <Button onClick={() => openModal()}>Add New Entry</Button>                
+                <Button color="google plus" onClick={() => openModal()}>Add New Entry</Button>                
           </Container>
         );
       }
@@ -124,7 +124,6 @@ const PatientDetailsPage: React.FC = () => {
     return (
         <div>
             {patient? renderPatient() : <p>Loading</p>}            
-            {/* { renderPatient() } */}
         </div>
     );
 };

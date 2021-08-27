@@ -59,10 +59,10 @@ const PatientListPage: React.FC = () => {
           </Header.Content>
         </Header>
       </Segment>
-        <Table striped selectable >
-          <Table.Header>
-            <Table.Row>
-              <Table.HeaderCell className="patient-header">Name</Table.HeaderCell>
+        <Table striped selectable className="patient-header" >
+          <Table.Header className="patient-header">
+            <Table.Row className="patient-header">
+              <Table.HeaderCell className="patient-header" >Name</Table.HeaderCell>
               <Table.HeaderCell className="patient-header">Gender</Table.HeaderCell>
               <Table.HeaderCell className="patient-header">Occupation</Table.HeaderCell>
               <Table.HeaderCell className="patient-header">Health Rating</Table.HeaderCell>
@@ -87,7 +87,7 @@ const PatientListPage: React.FC = () => {
           error={error}
           onClose={closeModal}
         />
-        <Button onClick={() => openModal()}>Add New Patient</Button>
+        <Button color="facebook" onClick={() => openModal()}>Add New Patient</Button>
       </Segment>
     </div>
   );

@@ -33,7 +33,6 @@ const EntryDetails: React.FC<{ entry:Entry }> = ({ entry }) => {
                     <List.Item >
                         <List.Header><Label icon="user md" color="teal" content="Specialist" ribbon/></List.Header>{entry.specialist}
                     </List.Item>
-                    {console.log(entry.diagnosisCodes)}
                     { entry.diagnosisCodes && entry.diagnosisCodes.length > 0 &&
                         <List.Item >
                             <List.Header><Label icon="code" color="teal" content="Diagnosis Codes" ribbon/></List.Header>
