@@ -70,7 +70,37 @@ const patients = [
         gender: types_1.Gender.Male,
         occupation: 'Direct Mobility Administrator',
         healthRating: 1,
-        entries: [],
+        entries: [
+            {
+                id: '397c3bfb-269a-4f09-b8ed-f4a8df6f8e75',
+                date: '2021-5-23',
+                specialist: 'Jay Ebert',
+                type: 'HealthCheck',
+                description: 'Annual cancer screening',
+                healthCheckRating: 0,
+            },
+            {
+                id: '543e7710-a09f-47ed-8b61-d6cfee817426',
+                date: '2020-5-15',
+                specialist: 'Jay Ebert',
+                type: 'HealthCheck',
+                description: 'Annual cancer screening',
+                healthCheckRating: 0,
+            },
+            {
+                id: '73e74a29-fb24-4d43-8af9-92a6ee8455f9',
+                date: '2015-11-27',
+                type: 'OccupationalHealthcare',
+                specialist: 'Trevor Kuhlman',
+                employerName: 'Pfannerstill, Raynor and Abernathy',
+                diagnosisCodes: ['L20', 'N30.0', 'J06.9'],
+                description: 'Consequatur occaecati excepturi quibusdam. Est quia eligendi qui id corporis eum aut. Quia possimus quam cupiditate fugiat voluptatem. Fugit rerum porro.',
+                sickLeave: {
+                    startDate: '2019-08-05',
+                    endDate: '2019-08-28',
+                }
+            }
+        ]
     },
     {
         id: 'd2773822-f723-11e9-8f0b-362b9e155667',
@@ -78,7 +108,7 @@ const patients = [
         dateOfBirth: '1984-05-15',
         ssn: '132-312-4223',
         gender: types_1.Gender.Male,
-        occupation: 'Principal Marketing Executive',
+        occupation: 'Senior Response Representative',
         healthRating: 1,
         entries: [
             {
@@ -94,7 +124,7 @@ const patients = [
                 date: '2019-09-10',
                 specialist: 'MD House',
                 type: 'OccupationalHealthcare',
-                employerName: 'FBI',
+                employerName: 'McCullough - Kuvalis',
                 description: 'Prescriptions renewed.',
             },
             {

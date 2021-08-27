@@ -7,7 +7,6 @@ exports.addEntry = exports.addPatient = exports.validateNewEntry = exports.valid
 /* eslint-disable @typescript-eslint/prefer-as-const */
 const patients_1 = __importDefault(require("../data/patients"));
 const types_1 = require("../types");
-// import { v4 as uuid } from 'uuid';
 const uuid = require("uuid");
 let patientsList = patients_1.default;
 const getPatients = () => {
@@ -15,8 +14,6 @@ const getPatients = () => {
 };
 exports.getPatients = getPatients;
 const getPatientsNonSensitive = () => {
-    // const redactedPatientsList = {...patientsData};
-    // console.log(...patientsData);
     const redactedPatientsList = patientsList.map(patient => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { ssn, ...rest } = patient;
@@ -245,7 +242,6 @@ const validateNewEntry = (entry) => {
                     sickLeave: validateSickLeave(entry.sickLeave)
                 };
             }
-            // entry.sickLeave? entryData.sickLeave = validateSickLeave(entry.sickLeave): null;
             return entryData;
         }
         else if (entry.type === 'HealthCheck') {

@@ -31,7 +31,6 @@ debug_1.default.debug('backend:server');
 const http_1 = __importDefault(require("http"));
 const path = __importStar(require("path"));
 const app = express_1.default();
-// app.use(cors);
 app.use(express_1.default.json());
 const allowedOrigins = ['http://localhost:3000'];
 const options = {
@@ -100,6 +99,3 @@ const PORT = 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-// function normalizePort(arg0: string) {
-//   throw new Error('Function not implemented.');
-// }

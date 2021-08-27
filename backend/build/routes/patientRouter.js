@@ -5,7 +5,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const patientsService_1 = require("../services/patientsService");
-// import { Diagnosis } from '../types';
 const router = express_1.default.Router();
 router.get('/', (_req, res) => {
     res.send(patientsService_1.getPatientsNonSensitive());
