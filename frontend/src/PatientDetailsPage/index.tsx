@@ -112,7 +112,7 @@ const PatientDetailsPage: React.FC = () => {
                     error={error}
                     onClose={closeModal}
                 />
-                <Button color="gre" onClick={() => openModal()}>Add New Entry</Button>                
+                <Button color="grey" onClick={() => openModal()}>Add New Entry</Button>                
           </Container>
         );
       }
