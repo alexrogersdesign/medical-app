@@ -5,7 +5,6 @@ import { Entry, Patient } from '../types';
 import { v4 as uuid } from 'uuid';
 import { Link } from"react-router-dom";
 
-// import { Patient } from "../types";
 import { apiBaseUrl } from "../constants";
 import { Container, List, Button, Label, Header } from "semantic-ui-react";
 import { useParams } from 'react-router-dom';
@@ -15,7 +14,6 @@ import AddEntryModal from '../AddEntryModal';
 import { EntryFormValues } from '../AddEntryModal/AddEntryForm';
 import PatientHeader from '../components/PatientHeader';
  
-
 interface Params {
     id: string;
 }
@@ -81,7 +79,6 @@ const PatientDetailsPage: React.FC = () => {
     const renderPatient = ( ) => {
         if (patient) {
         return (
-            
             <Container className="Patients">
                 <PatientHeader patient={patient}/>
                 <Button color="grey" as={Link} to="/" primary>

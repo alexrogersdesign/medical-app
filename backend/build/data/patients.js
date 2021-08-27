@@ -23,6 +23,19 @@ const patients = [
                     criteria: 'Thumb has healed.',
                 },
             },
+            {
+                id: '6c3ac12f-69ff-4d11-ad98-b5dd084cd990',
+                date: '2018-04-14',
+                type: 'OccupationalHealthcare',
+                specialist: 'Jana Donnelly',
+                employerName: 'Hilll, Corkery and Wisozk',
+                diagnosisCodes: ['M24.2', 'L20', 'S62.5'],
+                description: '',
+                sickLeave: {
+                    startDate: '2018-04-15',
+                    endDate: '2018-04-28',
+                },
+            },
         ],
     },
     {

@@ -23,6 +23,20 @@ const patients: Patient[] = [
           criteria: 'Thumb has healed.',
         },
       },
+      {
+        id: '6c3ac12f-69ff-4d11-ad98-b5dd084cd990',
+        date: '2018-04-14',
+        type: 'OccupationalHealthcare',
+        specialist: 'Jana Donnelly',
+        employerName: 'Hilll, Corkery and Wisozk',
+        diagnosisCodes: ['M24.2', 'L20', 'S62.5'],
+        description:
+          '',
+        sickLeave: {
+          startDate: '2018-04-15',
+          endDate: '2018-04-28',
+        },
+      },
     ],
   },
   {
@@ -58,7 +72,37 @@ const patients: Patient[] = [
     gender: Gender.Male,
     occupation: 'Direct Mobility Administrator',
     healthRating: 1, 
-    entries: [],
+    entries: [
+      {
+        id: '397c3bfb-269a-4f09-b8ed-f4a8df6f8e75',
+        date: '2021-5-23',
+        specialist: 'Jay Ebert',
+        type: 'HealthCheck',
+        description: 'Annual cancer screening',
+        healthCheckRating: 0,
+      },
+      {
+        id: '543e7710-a09f-47ed-8b61-d6cfee817426',
+        date: '2020-5-15',
+        specialist: 'Jay Ebert',
+        type: 'HealthCheck',
+        description: 'Annual cancer screening',
+        healthCheckRating: 0,
+      },
+      {
+        id: '73e74a29-fb24-4d43-8af9-92a6ee8455f9',
+        date: '2015-11-27',
+        type: 'OccupationalHealthcare',
+        specialist: 'Trevor Kuhlman',
+        employerName: 'Pfannerstill, Raynor and Abernathy',
+        diagnosisCodes: ['L20', 'N30.0', 'J06.9'],
+        description:
+          'Consequatur occaecati excepturi quibusdam. Est quia eligendi qui id corporis eum aut. Quia possimus quam cupiditate fugiat voluptatem. Fugit rerum porro.',
+        sickLeave: {
+          startDate: '2019-08-05',
+          endDate: '2019-08-28',
+        },
+    ],
   },
   {
     id: 'd2773822-f723-11e9-8f0b-362b9e155667',
@@ -66,7 +110,7 @@ const patients: Patient[] = [
     dateOfBirth: '1984-05-15',
     ssn: '132-312-4223',
     gender: Gender.Male,
-    occupation: 'Principal Marketing Executive',
+    occupation: 'Senior Response Representative',
     healthRating: 1, 
     entries: [
       {
@@ -82,7 +126,7 @@ const patients: Patient[] = [
         date: '2019-09-10',
         specialist: 'MD House',
         type: 'OccupationalHealthcare',
-        employerName: 'FBI',
+        employerName: 'McCullough - Kuvalis',
         description: 'Prescriptions renewed.',
       },
       {
